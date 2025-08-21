@@ -1,0 +1,11 @@
+
+{% extends 'main/base.html' %}
+{% block title %}Create Service{% endblock %}
+{% block content %}
+<h1>Create Service</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="like_button">Create</button>
+</form>
+{% endblock %}

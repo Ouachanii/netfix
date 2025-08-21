@@ -1,0 +1,11 @@
+
+{% extends 'main/base.html' %}
+{% block title %}Request {{ service.name }}{% endblock %}
+{% block content %}
+<h1>Request: {{ service.name }}</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="like_button">Submit Request</button>
+</form>
+{% endblock %}

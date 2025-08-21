@@ -1,0 +1,15 @@
+
+{% extends 'main/base.html' %}
+{% block title %}Most Requested{% endblock %}
+{% block content %}
+<h1>Most Requested Services</h1>
+{% for s in services %}
+  <div class="service_card">
+    <a href="/services/{{s.id}}">{{s.name}}</a> — {{s.field}} — {{s.price_hour}}€/hour
+    <span style="float:right;">Requests: {{ s.requests.count }}</span>
+  </div>
+  <div class="line"></div>
+{% empty %}
+  <p>No requests yet.</p>
+{% endfor %}
+{% endblock %}
